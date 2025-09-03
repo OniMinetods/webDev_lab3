@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>lab 3</title>
+  </head>
+  <body>
+    <dialog id="dialog">
+      <form id="form" novalidate>
+        <p class="register-word">Регистрация</p>
+        <div class="dialog-form name">
+          <label for="name">Имя пользователя</label>
+          <div class="input-span">
+            <input
+              type="text"
+              id="name"
+              required
+              placeholder="Иван"
+              aria-describedby="format"
+              aria-live="polite"
+            />
+            <span class="validity-icon"></span>
+            <p id="format-name" hidden>Ваше имя без фамилии и отчества</p>
+          </div>
+        </div>
+        <div class="dialog-form email">
+          <label for="email">Почта</label>
+          <div class="input-span">
+            <input
+              type="email"
+              id="email"
+              required
+              placeholder="email@example.com"
+              aria-describedby="format"
+              aria-live="polite"
+            />
+            <span class="validity-icon"></span>
+            <p id="format-email" hidden>Неверно указана почта</p>
+          </div>
+        </div>
+        <div class="dialog-form password">
+          <label for="password">Пароль</label>
+          <div class="input-span">
+            <input
+              type="password"
+              id="password"
+              required
+              minlength="6"
+              aria-describedby="format"
+              aria-live="polite"
+            />
+            <span class="validity-icon"></span>
+            <p id="format-password" hidden>
+              Пароль должен содержать минимум 6 символов
+            </p>
+          </div>
+        </div>
+        <div class="buttons">
+          <button
+            id="dialog-show-password"
+            class="dialog-show-password"
+            type="button"
+          >
+            Показать пароль
+          </button>
+          <button class="dialog-submit" type="submit">Отправить</button>
+
+          <button
+            class="dialog-close"
+            type="button"
+            onclick="window['dialog'].close()"
+          >
+            Закрыть
+          </button>
+        </div>
+      </form>
+    </dialog>
+
+    <button type="button" id="register" onclick="window.dialog.showModal()">
+      Регистрация
+    </button>
+
+    <script src="main.js"></script>
+  </body>
+</html>

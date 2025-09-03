@@ -1,0 +1,98 @@
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: rgb(36, 36, 36);
+}
+
+#register {
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: white;
+  border: 3px solid blue;
+}
+
+.register-word {
+  font-size: 20px;
+  text-align: center;
+}
+
+#dialog[open] {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#name,
+#email,
+#password {
+  padding: 5px;
+  border-radius: 8px;
+  border: 2px solid;
+}
+
+#name:user-valid,
+#email:user-valid,
+#password:user-valid {
+  border: 2px solid green;
+}
+
+#name:user-invalid,
+#email:user-invalid,
+#password:user-invalid {
+  border: 2px solid red;
+}
+
+#format-name,
+#format-email,
+#format-password {
+  color: red;
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.dialog-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px 20px;
+  gap: 5px;
+}
+
+.dialog-close,
+.dialog-show-password,
+.dialog-submit {
+  border-radius: 10px;
+  border: 1px solid;
+  padding: 10px 15px;
+}
+
+.dialog-buttons {
+  text-align: center;
+  padding: 10px;
+}
+
+.buttons {
+  display: flex;
+  padding: 10px 20px;
+  justify-content: space-between;
+}
+
+#dialog::backdrop {
+  background-color: rgb(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+}
+
+input:user-valid + span::before {
+  content: '✓';
+  color: green;
+}
+
+input:user-invalid + span::before {
+  content: '✖';
+  color: red;
+}
+
+label::after {
+  content: ' (Обязательно)';
+}
